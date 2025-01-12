@@ -1,0 +1,92 @@
+.cover{
+    width: 100%;
+    background-color: whitesmoke;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+  
+  .title {
+    text-align: center;
+    color: #4761FF;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+  
+  .expertsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .expertCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .imageWrapper {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #EDE9FE 0%, #A78BFA 100%);
+    margin-bottom: 1.5rem;
+  }
+  
+  .expertImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .expertName {
+    color: #4761FF;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .expertDescription {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: 250px;
+  }
+  
+  @media (max-width: 1024px) {
+    .expertsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .expertsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .expertsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .title {
+      font-size: 1.75rem;
+    }
+    
+    .imageWrapper {
+      width: 140px;
+      height: 140px;
+    }
+  }

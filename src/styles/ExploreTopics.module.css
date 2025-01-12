@@ -1,0 +1,101 @@
+.cover{
+    width: 100%;
+    background-color: whitesmoke;
+}
+.exploreSection {
+    padding: 2.5rem 1.25rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    color: #4761FF;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .topicsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .topicCard {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .topicCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .topicCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .topicOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .topicTitle {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .viewMoreBtn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.75rem 1.875rem;
+    border: 2px solid #4761FF;
+    border-radius: 6px;
+    color: #4761FF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .viewMoreBtn:hover {
+    background-color: #4761FF;
+    color: white;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .sectionTitle {
+      font-size: 2rem;
+    }
+    
+    .topicsGrid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sectionTitle {
+      font-size: 1.75rem;
+    }
+    
+    .topicTitle {
+      font-size: 1rem;
+    }
+  }
