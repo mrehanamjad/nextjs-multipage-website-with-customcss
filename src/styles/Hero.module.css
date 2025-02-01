@@ -4,8 +4,8 @@
     width: 100%;
     margin-top: 4rem;
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-    overflow: hidden;
+    background-color: #6366f1;
+        overflow: hidden;
     font-family: system-ui, -apple-system, sans-serif;
     
   }
@@ -13,7 +13,7 @@
   .cloudLeft,
   .cloudRight {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: #7e7fe7;
     border-radius: 50px;
   }
   

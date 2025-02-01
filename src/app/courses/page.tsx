@@ -1,7 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import styles from '@/styles/CoursesPage.module.css';
-import { FaBookOpen, FaClock, FaSearch, FaStar, FaUserSecret } from 'react-icons/fa';
+import {  FaSearch} from 'react-icons/fa';
+import Top from '@/components/Top';
+import CourseCard from '@/components/CourseCard';
 
 interface Course {
   id: number;
@@ -195,12 +197,7 @@ export default function CoursesPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1>Explore Our Courses</h1>
-          <p>Discover the perfect course to advance your career and skills</p>
-        </div>
-      </div>
+     <Top name={"Our Courses"} />
 
       <main className={styles.main}>
         <div className={styles.sidebar}>
@@ -249,36 +246,7 @@ export default function CoursesPage() {
         <div className={styles.content}>
           <div className={styles.courseGrid}>
             {currentCourses.map((course) => (
-              <article key={course.id} className={styles.courseCard}>
-                <div className={styles.courseImage}>
-                  <img src={course.image} alt={course.title} />
-                  <span className={styles.duration}>
-                    <FaClock className={styles.icon} />
-                    {course.duration}
-                  </span>
-                </div>
-                <div className={styles.courseContent}>
-                  <span className={styles.category}>{course.category}</span>
-                  <h2>{course.title}</h2>
-                  <p className={styles.instructor}>
-                    <FaBookOpen className={styles.icon} />
-                    {course.instructor}
-                  </p>
-                  <div className={styles.courseInfo}>
-                    <div className={styles.stats}>
-                      <span className={styles.rating}>
-                        <FaStar className={styles.icon} />
-                        {course.rating}
-                      </span>
-                      <span className={styles.students}>
-                        <FaUserSecret className={styles.icon} />
-                        {(course.students / 1000).toFixed(1)}k
-                      </span>
-                    </div>
-                    <span className={styles.price}>${course.price}</span>
-                  </div>
-                </div>
-              </article>
+             <CourseCard {...course} />
             ))}
           </div>
 
