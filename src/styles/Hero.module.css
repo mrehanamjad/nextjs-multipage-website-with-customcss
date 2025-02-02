@@ -1,6 +1,5 @@
 .hero {
     position: relative;
-    min-height: 600px;
     width: 100%;
     margin-top: 4rem;
     padding: 4rem 2rem;
@@ -8,27 +7,6 @@
         overflow: hidden;
     font-family: system-ui, -apple-system, sans-serif;
     
-  }
-  
-  .cloudLeft,
-  .cloudRight {
-    position: absolute;
-    background-color: #7e7fe7;
-    border-radius: 50px;
-  }
-  
-  .cloudLeft {
-    width: 100px;
-    height: 30px;
-    top: 15%;
-    left: 10%;
-  }
-  
-  .cloudRight {
-    width: 150px;
-    height: 40px;
-    top: 25%;
-    right: 15%;
   }
   
   .content {

@@ -7,9 +7,6 @@ import Image from 'next/image';
 const Hero: React.FC = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.cloudLeft} />
-      <div className={styles.cloudRight} />
-      
       <div className={styles.content}>
         <div className={styles.textContent}>
           <h1 className={styles.title}>
