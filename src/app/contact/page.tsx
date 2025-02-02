@@ -20,8 +20,6 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,27 +27,6 @@ export default function ContactPage() {
       ...prev,
       [name]: value
     }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }
   };
 
   return (
@@ -86,7 +63,7 @@ export default function ContactPage() {
                 <div>
                   <h3>Visit Us</h3>
                   <p>123 Business Avenue</p>
-                  <p>Karachi</p>
+                  <p>Karachi.</p>
                 </div>
               </div>
 
@@ -101,7 +78,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className={styles.contactForm} onSubmit={handleSubmit}>
+          <form className={styles.contactForm}>
             <div className={styles.formGrid}>
               <div className={styles.formGroup}>
                 <label htmlFor="name">Full Name</label>
@@ -159,29 +136,11 @@ export default function ContactPage() {
             <button 
               type="submit" 
               className={styles.submitButton}
-              disabled={isSubmitting}
             >
-              {isSubmitting ? (
-                'Sending...'
-              ) : (
-                <>
                   Send Message
                   <BiSend className={styles.sendIcon} />
-                </>
-              )}
             </button>
 
-            {submitStatus === 'success' && (
-              <div className={styles.successMessage}>
-                Message sent successfully! We'll get back to you soon.
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className={styles.errorMessage}>
-                Oops! Something went wrong. Please try again.
-              </div>
-            )}
           </form>
         </div>
       </div>

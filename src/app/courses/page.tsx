@@ -246,7 +246,7 @@ export default function CoursesPage() {
         <div className={styles.content}>
           <div className={styles.courseGrid}>
             {currentCourses.map((course) => (
-             <CourseCard {...course} />
+             <CourseCard key={course.id} {...course} />
             ))}
           </div>
 
